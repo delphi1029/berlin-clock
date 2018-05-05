@@ -1,4 +1,4 @@
-package com.ubs.opsit.time.utility;
+package com.ubs.opsit.interviews.time.utility;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

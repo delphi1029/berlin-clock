@@ -4,8 +4,8 @@ import com.ubs.opsit.interviews.exception.TimeFormatException;
 import com.ubs.opsit.interviews.time.Hour;
 import com.ubs.opsit.interviews.time.Minute;
 import com.ubs.opsit.interviews.time.Second;
-import com.ubs.opsit.time.utility.TimeFormatVerifier;
-import com.ubs.opsit.time.utility.TimeFormatVerifier24Hours;
+import com.ubs.opsit.interviews.time.utility.TimeFormatVerifier;
+import com.ubs.opsit.interviews.time.utility.TimeFormatVerifier24Hours;
 
 public class BerlinClock implements TimeConverter {
 
