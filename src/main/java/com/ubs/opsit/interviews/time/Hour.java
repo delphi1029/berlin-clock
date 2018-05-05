@@ -1,4 +1,4 @@
-package com.ubs.opsit.interviews;
+package com.ubs.opsit.interviews.time;
 
 public class Hour {
 	
@@ -18,21 +18,21 @@ public class Hour {
 		int redLightsToGlowinSecondRow = hour % 5;
 		
 		for(int i=0; i<redLightsToGlowinFirstRow; i++) {
-			hourDisplay.append(Lamp.RED);
+			hourDisplay.append(Lamp.RED.getSign());
 		}
 		
 		for(int j=0; j<(TOTAL_HOUR_LIGHTS-redLightsToGlowinFirstRow); j++) {
-			hourDisplay.append(Lamp.OFF);
+			hourDisplay.append(Lamp.OFF.getSign());
 		}
 		
 		hourDisplay.append("\n");
 		
 		for(int i=0; i<redLightsToGlowinSecondRow; i++) {
-			hourDisplay.append(Lamp.RED);
+			hourDisplay.append(Lamp.RED.getSign());
 		}
 		
 		for(int j=0; j<(TOTAL_HOUR_LIGHTS-redLightsToGlowinSecondRow); j++) {
-			hourDisplay.append(Lamp.OFF);
+			hourDisplay.append(Lamp.OFF.getSign());
 		}
 		
 		hourDisplay.append("\n");

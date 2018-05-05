@@ -1,12 +1,16 @@
 package com.ubs.opsit.interviews;
 
-import java.text.SimpleDateFormat;
+import com.ubs.opsit.interviews.exception.TimeFormatException;
+import com.ubs.opsit.interviews.time.Hour;
+import com.ubs.opsit.interviews.time.Minute;
+import com.ubs.opsit.interviews.time.Second;
+import com.ubs.opsit.time.utility.TimeFormatVerifier;
+import com.ubs.opsit.time.utility.TimeFormatVerifier24Hours;
 
 public class BerlinClock implements TimeConverter {
 
-	private static final String TIME_PATTERN_24HR = "([01]?[0-9]|2[0-3]):[0-5][0-9]";
-
-	private static final String TIME_FORMAT = "hh:mm:ss";
+	private static final String TIME_DELIMITER = ":";
+	private TimeFormatVerifier timeformatVerifier;
 	private Hour hour;
 	private Minute minute;
 	private Second second;
@@ -15,21 +19,22 @@ public class BerlinClock implements TimeConverter {
 		this.hour = new Hour();
 		this.minute = new Minute();
 		this.second = new Second();
+		this.timeformatVerifier = new TimeFormatVerifier24Hours();
 	}
 	
 	@Override
 	public String convertTime(String aTime) {
-		verifyandSplitTimeString(aTime);
+		if(!timeformatVerifier.isVerified(aTime)) {
+			throw new TimeFormatException("Time not in correct hh:mm:ss format");
+		}
+		splitTimeString(aTime);
 		return displayBerlinClock();
 	}
 
 	
 	
-	private void verifyandSplitTimeString(String aTime) {
-		
-		SimpleDateFormat timeFormat = new SimpleDateFormat(TIME_FORMAT);
-		String[] timeTokens = aTime.split(":");
-		
+	private void splitTimeString(String aTime) {
+		String[] timeTokens = aTime.split(TIME_DELIMITER);
 		hour.setHour(timeTokens[0]);
 		minute.setMinutes(timeTokens[1]);
 		second.setSecond(timeTokens[2]);

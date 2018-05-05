@@ -1,4 +1,4 @@
-package com.ubs.opsit.interviews;
+package com.ubs.opsit.interviews.time;
 
 public class Second {
 
@@ -16,9 +16,9 @@ public class Second {
 		boolean secondsLightToGlow = second % 2 == 0 ?true:false;
 		
 		if(secondsLightToGlow)
-			secondDisplay.append(Lamp.YELLOW);
+			secondDisplay.append(Lamp.YELLOW.getSign());
 		else
-			secondDisplay.append(Lamp.OFF);
+			secondDisplay.append(Lamp.OFF.getSign());
 		
 		secondDisplay.append("\n");
 		

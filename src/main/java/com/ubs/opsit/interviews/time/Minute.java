@@ -1,4 +1,4 @@
-package com.ubs.opsit.interviews;
+package com.ubs.opsit.interviews.time;
 
 public class Minute {
 	
@@ -16,24 +16,24 @@ public class Minute {
 		
 		for(int i=1; i<=numberOfYellowLightsInThirdRowToGlow; i++) {
 			if(i%3 == 0) {
-				minuteDisplay.append(Lamp.RED);
+				minuteDisplay.append(Lamp.RED.getSign());
 			} else {
-				minuteDisplay.append(Lamp.YELLOW);
+				minuteDisplay.append(Lamp.YELLOW.getSign());
 			}
 		}
 		
 		for(int j=0; j<(11-numberOfYellowLightsInThirdRowToGlow); j++) {
-			minuteDisplay.append(Lamp.OFF);
+			minuteDisplay.append(Lamp.OFF.getSign());
 		}
 		
 		minuteDisplay.append("\n");
 		
 		for(int i=0; i<numberOfYellowLightsInFourthRowToGlow; i++) {
-			minuteDisplay.append(Lamp.YELLOW);
+			minuteDisplay.append(Lamp.YELLOW.getSign());
 		}
 		
 		for(int j=0; j<(4-numberOfYellowLightsInFourthRowToGlow); j++) {
-			minuteDisplay.append(Lamp.OFF);
+			minuteDisplay.append(Lamp.OFF.getSign());
 		}
 		
 		return minuteDisplay;
