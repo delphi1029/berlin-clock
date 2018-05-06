@@ -11,33 +11,46 @@ public class Minute {
 	public StringBuilder display() {
 		StringBuilder minuteDisplay = new StringBuilder();
 		Integer minutes = Integer.valueOf(minutesStr);
-		int numberOfYellowLightsInThirdRowToGlow = minutes/5;
-		int numberOfYellowLightsInFourthRowToGlow = minutes%5;
 		
+		minuteDisplay.append(displayFirstMinuteRow(minutes));
+		minuteDisplay.append(newLine());
+		minuteDisplay.append(displaySecondMinuteRow(minutes));	
+		return minuteDisplay;
+		
+	}
+	
+	private String newLine() {
+		return "\n";
+	}
+
+	private StringBuilder displaySecondMinuteRow(Integer minutes) {
+		int numberOfYellowLightsInFourthRowToGlow = minutes%5;
+		StringBuilder minuteDisplaySecondRow = new StringBuilder();
+		for(int i=0; i<numberOfYellowLightsInFourthRowToGlow; i++) {
+			minuteDisplaySecondRow.append(Lamp.YELLOW.getSign());
+		}
+		
+		for(int j=0; j<(4-numberOfYellowLightsInFourthRowToGlow); j++) {
+			minuteDisplaySecondRow.append(Lamp.OFF.getSign());
+		}
+		return minuteDisplaySecondRow;
+	}
+
+	private StringBuilder displayFirstMinuteRow(Integer minutes) {
+		int numberOfYellowLightsInThirdRowToGlow = minutes/5;
+		StringBuilder minuteDisplayFirstRow = new StringBuilder();
 		for(int i=1; i<=numberOfYellowLightsInThirdRowToGlow; i++) {
 			if(i%3 == 0) {
-				minuteDisplay.append(Lamp.RED.getSign());
+				minuteDisplayFirstRow.append(Lamp.RED.getSign());
 			} else {
-				minuteDisplay.append(Lamp.YELLOW.getSign());
+				minuteDisplayFirstRow.append(Lamp.YELLOW.getSign());
 			}
 		}
 		
 		for(int j=0; j<(11-numberOfYellowLightsInThirdRowToGlow); j++) {
-			minuteDisplay.append(Lamp.OFF.getSign());
+			minuteDisplayFirstRow.append(Lamp.OFF.getSign());
 		}
-		
-		minuteDisplay.append("\n");
-		
-		for(int i=0; i<numberOfYellowLightsInFourthRowToGlow; i++) {
-			minuteDisplay.append(Lamp.YELLOW.getSign());
-		}
-		
-		for(int j=0; j<(4-numberOfYellowLightsInFourthRowToGlow); j++) {
-			minuteDisplay.append(Lamp.OFF.getSign());
-		}
-		
-		return minuteDisplay;
-		
+		return minuteDisplayFirstRow;
 	}
 
 }

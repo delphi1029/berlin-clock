@@ -46,6 +46,10 @@ public class BerlinClock implements TimeConverter {
 		convertedTime.append(second.display());
 		convertedTime.append(hour.display());
 		convertedTime.append(minute.display());
+		
+		System.out.println("***********************");
+		System.out.println(convertedTime);
+		System.out.println("***********************");
 		return convertedTime.toString();
 	}
 	
