@@ -1,4 +1,4 @@
-package com.ubs.opsit.interviews.time;
+package com.ubs.opsit.interviews.time.minute;
 
 import org.junit.Assert;
 import org.junit.Before;

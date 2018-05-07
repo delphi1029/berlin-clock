@@ -1,43 +1,45 @@
-package com.ubs.opsit.interviews.time;
+package com.ubs.opsit.interviews.time.hour;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.ubs.opsit.interviews.time.hour.HourFirstRow;
+import com.ubs.opsit.interviews.time.hour.HourRow;
+import com.ubs.opsit.interviews.time.hour.HourSecondRow;
 
-public class TestHourFirstRow {
+public class TestHourSecondRow {
 	
-	HourFirstRow hourFirstRow;
+	HourRow hourSecondRow;
 	
 	@Before
 	public void init() {
-		hourFirstRow = new HourFirstRow();
+		hourSecondRow = new HourSecondRow();
 	}
+	
 	
 	@Test
 	public void testDisplayMidnight() {
 		String expected = "OOOO";
 		
-		StringBuilder actual = hourFirstRow.display(00);
+		StringBuilder actual = hourSecondRow.display(00);
 		
 		Assert.assertEquals(expected, actual.toString());
 	}
 	
 	@Test
 	public void testDisplayMidAfternoon() {
-		String expected = "RROO";
+		String expected = "RRRO";
 		
-		StringBuilder actual = hourFirstRow.display(13);
+		StringBuilder actual = hourSecondRow.display(13);
 		
 		Assert.assertEquals(expected, actual.toString());
 	}
 	
 	@Test
 	public void testDisplayJustBeforeMidnight() {
-		String expected = "RRRR";
+		String expected = "RRRO";
 		
-		StringBuilder actual = hourFirstRow.display(23);
+		StringBuilder actual = hourSecondRow.display(23);
 		
 		Assert.assertEquals(expected, actual.toString());
 	}
@@ -46,7 +48,7 @@ public class TestHourFirstRow {
 	public void testDisplayOnMidnight() {
 		String expected = "RRRR";
 		
-		StringBuilder actual = hourFirstRow.display(24);
+		StringBuilder actual = hourSecondRow.display(24);
 		
 		Assert.assertEquals(expected, actual.toString());
 	}
