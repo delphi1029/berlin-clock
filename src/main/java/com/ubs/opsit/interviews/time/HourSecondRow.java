@@ -4,7 +4,7 @@ public class HourSecondRow {
 	
 	private static final int TOTAL_HOUR_LIGHTS = 4;
 	
-	public StringBuilder displaySecondHourRow(Integer hour) {
+	public StringBuilder display(Integer hour) {
 		int redLightsToGlowinSecondRow = getRedLightsToGlowInSecondRow(hour);
 		StringBuilder hourDisplaySecondRow = new StringBuilder();
 		for(int i=0; i<redLightsToGlowinSecondRow; i++) {

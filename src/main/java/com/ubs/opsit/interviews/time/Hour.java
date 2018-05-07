@@ -14,9 +14,9 @@ public class Hour {
 		HourFirstRow firstrow = new HourFirstRow();
 		HourSecondRow secondrow = new HourSecondRow();
 		
-		hourDisplay.append(firstrow.displayFirstHourRow(hour));
+		hourDisplay.append(firstrow.display(hour));
 		hourDisplay.append(newLine());
-		hourDisplay.append(secondrow.displaySecondHourRow(hour));
+		hourDisplay.append(secondrow.display(hour));
 		hourDisplay.append(newLine());
 		return hourDisplay;
 		
