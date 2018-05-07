@@ -1,9 +1,9 @@
 package com.ubs.opsit.interviews;
 
 import com.ubs.opsit.interviews.exception.TimeFormatException;
-import com.ubs.opsit.interviews.time.Minute;
 import com.ubs.opsit.interviews.time.Second;
 import com.ubs.opsit.interviews.time.hour.Hour;
+import com.ubs.opsit.interviews.time.minute.Minute;
 import com.ubs.opsit.interviews.time.utility.TimeFormatVerifier;
 import com.ubs.opsit.interviews.time.utility.TimeFormatVerifier24Hours;
 

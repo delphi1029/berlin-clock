@@ -8,6 +8,10 @@ public interface Row {
 	
 	public int getNumberOfOnLights(Integer hour);
 	
+	public StringBuilder displayOnLamps(int numberOfOnLights);
+	
+	public StringBuilder displayOffLamps(int numberOfOnLights);
+	
 	public default String newLine() {
 		return "\n";
 	}

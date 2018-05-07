@@ -21,13 +21,10 @@ public class Hour {
 		this.secondrow = secondrow;
 	}
 
-
-
 	public void setHour(String hourStr) {
 		this.hour = Integer.parseInt(hourStr);
 	}
-	
-	
+		
 	public StringBuilder display() {
 		StringBuilder hourDisplay = new StringBuilder();	
 		hourDisplay.append(firstrow.display(hour));
