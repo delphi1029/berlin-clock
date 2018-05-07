@@ -7,5 +7,9 @@ public interface Row {
 	public int getNumberOfOffLights(int redLightsToGlowinSecondRow);
 	
 	public int getNumberOfOnLights(Integer hour);
+	
+	public default String newLine() {
+		return "\n";
+	}
 
 }

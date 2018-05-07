@@ -1,11 +1,13 @@
 package com.ubs.opsit.interviews.time.hour;
 
+import com.ubs.opsit.interviews.time.Row;
+
 
 public class Hour {
 	
 	private Integer hour;
-	private HourFirstRow firstrow;
-	private HourRow secondrow;
+	private Row firstrow;
+	private Row secondrow;
 	
 	public Hour() {
 		super();
@@ -29,13 +31,9 @@ public class Hour {
 	public StringBuilder display() {
 		StringBuilder hourDisplay = new StringBuilder();	
 		hourDisplay.append(firstrow.display(hour));
-		hourDisplay.append(newLine());
+		hourDisplay.append(firstrow.newLine());
 		hourDisplay.append(secondrow.display(hour));
-		hourDisplay.append(newLine());
+		hourDisplay.append(secondrow.newLine());
 		return hourDisplay;
-	}
-
-	private String newLine() {
-		return "\n";
 	}
 }
