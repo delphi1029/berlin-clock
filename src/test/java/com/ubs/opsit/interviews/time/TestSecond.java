@@ -4,13 +4,15 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.ubs.opsit.interviews.time.second.Seconds;
+
 public class TestSecond {
 	
-	Second second;
+	Seconds second;
 	
 	@Before
 	public void init() {
-		second = new Second();
+		second = new Seconds();
 	}
 	
 	@Test

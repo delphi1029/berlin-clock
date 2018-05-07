@@ -1,9 +1,9 @@
 package com.ubs.opsit.interviews;
 
 import com.ubs.opsit.interviews.exception.TimeFormatException;
-import com.ubs.opsit.interviews.time.Second;
 import com.ubs.opsit.interviews.time.hour.Hour;
 import com.ubs.opsit.interviews.time.minute.Minute;
+import com.ubs.opsit.interviews.time.second.Seconds;
 import com.ubs.opsit.interviews.time.utility.TimeFormatVerifier;
 import com.ubs.opsit.interviews.time.utility.TimeFormatVerifier24Hours;
 
@@ -13,12 +13,12 @@ public class BerlinClock implements TimeConverter {
 	private TimeFormatVerifier timeformatVerifier;
 	private Hour hour;
 	private Minute minute;
-	private Second second;
+	private Seconds second;
 	
 	public  BerlinClock() {
 		this.hour = new Hour();
 		this.minute = new Minute();
-		this.second = new Second();
+		this.second = new Seconds();
 		this.timeformatVerifier = new TimeFormatVerifier24Hours();
 	}
 	
