@@ -45,5 +45,16 @@ public class TestHour {
 		
 		Assert.assertEquals(expected, actual.toString());
 	}
+	
+	@Test
+	public void testDisplayOnMidnight() {
+		hour.setHour("24");
+		
+		String expected = "RRRR\nRRRR\n";
+		
+		StringBuilder actual = hour.display();
+		
+		Assert.assertEquals(expected, actual.toString());
+	}
 
 }
