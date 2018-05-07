@@ -1,10 +1,11 @@
-package com.ubs.opsit.interviews.time;
+package com.ubs.opsit.interviews.time.hour;
+
 
 public class Hour {
 	
 	private Integer hour;
 	private HourFirstRow firstrow;
-	private HourSecondRow secondrow;
+	private HourRow secondrow;
 	
 	public Hour() {
 		super();
@@ -12,7 +13,7 @@ public class Hour {
 		secondrow = new HourSecondRow();
 	}
 
-	public Hour(HourFirstRow firstrow, HourSecondRow secondrow) {
+	public Hour(HourFirstRow firstrow, HourRow secondrow) {
 		super();
 		this.firstrow = firstrow;
 		this.secondrow = secondrow;

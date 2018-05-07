@@ -1,9 +1,9 @@
 package com.ubs.opsit.interviews;
 
 import com.ubs.opsit.interviews.exception.TimeFormatException;
-import com.ubs.opsit.interviews.time.Hour;
 import com.ubs.opsit.interviews.time.Minute;
 import com.ubs.opsit.interviews.time.Second;
+import com.ubs.opsit.interviews.time.hour.Hour;
 import com.ubs.opsit.interviews.time.utility.TimeFormatVerifier;
 import com.ubs.opsit.interviews.time.utility.TimeFormatVerifier24Hours;
 
@@ -47,9 +47,6 @@ public class BerlinClock implements TimeConverter {
 		convertedTime.append(hour.display());
 		convertedTime.append(minute.display());
 		
-		System.out.println("***********************");
-		System.out.println(convertedTime);
-		System.out.println("***********************");
 		return convertedTime.toString();
 	}
 	

@@ -4,9 +4,12 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.ubs.opsit.interviews.time.hour.HourRow;
+import com.ubs.opsit.interviews.time.hour.HourSecondRow;
+
 public class TestHourSecondRow {
 	
-	HourSecondRow hourSecondRow;
+	HourRow hourSecondRow;
 	
 	@Before
 	public void init() {
