@@ -9,9 +9,9 @@ import com.ubs.opsit.interviews.time.utility.TimeFormatVerifier24Hours;
 
 public class BerlinClock implements TimeConverter {
 
-	public Hour hour;
-	public Minute minute;
-	public Seconds second;
+	private Hour hour;
+	private Minute minute;
+	private Seconds second;
 	private TimeStringSplitter timeStringSplitter;
 	private TimeFormatVerifier timeformatVerifier;
 
