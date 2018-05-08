@@ -9,38 +9,41 @@ import com.ubs.opsit.interviews.time.utility.TimeFormatVerifier24Hours;
 
 public class BerlinClock implements TimeConverter {
 
-	private static final String TIME_DELIMITER = ":";
+	public Hour hour;
+	public Minute minute;
+	public Seconds second;
+	private TimeStringSplitter timeStringSplitter;
 	private TimeFormatVerifier timeformatVerifier;
-	private Hour hour;
-	private Minute minute;
-	private Seconds second;
-	
+
 	public  BerlinClock() {
 		this.hour = new Hour();
 		this.minute = new Minute();
 		this.second = new Seconds();
 		this.timeformatVerifier = new TimeFormatVerifier24Hours();
+		this.timeStringSplitter = new TimeStringSplitter();
 	}
 	
 	@Override
-	public String convertTime(String aTime) {
-		if(!timeformatVerifier.isVerified(aTime)) {
-			throw new TimeFormatException("Time not in correct hh:mm:ss format");
-		}
-		splitTimeString(aTime);
+	public String convertTime(String timeStr) {
+		
+		verifyTimeString(timeStr);
+		String[] time = timeStringSplitter.splitTimeString(timeStr);
+		setTime(time);
 		return displayBerlinClock();
 	}
 
+	private void verifyTimeString(String timeStr) {
+		if(!timeformatVerifier.isVerified(timeStr)) {
+			throw new TimeFormatException("Time not in hh:mm:ss format");
+		}
+	}
 	
-	
-	private void splitTimeString(String aTime) {
-		String[] timeTokens = aTime.split(TIME_DELIMITER);
-		hour.setHour(timeTokens[0]);
-		minute.setMinutes(timeTokens[1]);
-		second.setSecond(timeTokens[2]);
+	private void setTime(String[] time) {
+		hour.setHour(time[0]);
+		minute.setMinutes(time[1]);
+		second.setSecond(time[2]);
 	}
 
-	
 	private String displayBerlinClock() {
 		StringBuilder convertedTime = new StringBuilder();
 		convertedTime.append(second.display());
